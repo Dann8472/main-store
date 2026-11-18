@@ -1,6 +1,6 @@
 <?php
     //Get database conecttion
-    require('../settings/database.php');
+    require('settings/database.php');
 
     //Get payload from frontend
     $first_name = $_POST['fname'];
@@ -11,7 +11,7 @@
     $passwd = MD5($_POST['pswd']); 
 
    //Prepare query
-   $sql = "
+    $sql = "
         INSERT INTO
         users (firstname, lastname, ident_number, email, password) 
         VALUES (
@@ -26,7 +26,7 @@
 
     //Execute query
 
-    $res = pg_query($local_conn, $sql);
+    $res = pg_query($supa_conn, $sql);
 
 
     if($res){
