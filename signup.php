@@ -10,6 +10,10 @@
     $email = $_POST['email'];
     $passwd = MD5($_POST['pswd']); 
 
+    $sql_check_email = "SELECT * FROM users WHERE email = '$email' ";
+    $res = pg_query($supa_conn, $sql_check_email);
+    $total = pg_num_rows($res);
+    if($total < 1){
    //Prepare query
     $sql = "
         INSERT INTO
@@ -23,14 +27,17 @@
         ) ;
     ";
 
-
     //Execute query
-
     $res = pg_query($supa_conn, $sql);
 
-
-    if($res){
-        echo "User has been successfully!<br>";
-    }else{
-        echo "Error: User hasn't been created successfully!<br>";
+    if ($res) {
+        //echo "User has been created successfully !!! ";
+        echo "<script>alert('User has been created successfully !!! ')</script>";
+        header('refresh:0;url=signin.html');
+    } else {
+        echo "Error: User hasn't beei created successfully !!! ";
     }
+} else{
+    echo "<script>alert('User email already exists. Try again !!! ')</script>";
+    header('refresh:0; url=signup.html');
+}
