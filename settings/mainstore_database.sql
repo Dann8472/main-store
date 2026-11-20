@@ -21,3 +21,6 @@ SELECT * FROM users;
 --Insert into user into users table
 INSERT INTO users (firstname, lastname, ident_number, email, password) VALUES ('Dann', 'Rios', '12345678', 'jon@mail.com', '123123');
 -- Update field url_photo
+
+-- New table for the activity
+ALTER TABLE users ADD COLUMN photo_url VARCHAR(255);
