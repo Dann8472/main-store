@@ -16,7 +16,7 @@
 	    mobile_phone,
 	    status,
 	    case when status = true then 'Active' else 'Inactive' end as status,
-        url_photo
+        photo_url
     from
 	    users
     ";
@@ -46,14 +46,13 @@
         <tr>
         <!-- Here print data from database -->
             <td>
-                <img src="<?= $row['url_photo'] ?>" width="40" alt="User photo profile">
-            </td>
+                <img src="<?= $row['photo_url'] ?>" width="40" alt="User photo profile">
             <td><?= $row['fullname'] ?></td>
             <td><?= $row['email'] ?></td>
             <td><?= $row['mobile_phone'] ?></td>
             <td><?= $row['status'] ?></td>
             <td>
-            <a href="update_user.php?id=<?php echo $row['id']; ?>">
+            <a href="edit_user.php?id=<?php echo $row['id']; ?>">
                 <img src="icons/edit.png" alt="Edit user" width="20">
 
             </a>
