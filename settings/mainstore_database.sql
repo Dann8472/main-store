@@ -19,4 +19,5 @@ CREATE TABLE users (
 SELECT * FROM users;
 
 --Insert into user into users table
-INSERT INTO users (firstname, lastname, ident_number, email, password) VALUES ('Joan', 'Ayala', '12345678', 'jon@mail.com', '123123') ;
+INSERT INTO users (firstname, lastname, ident_number, email, password) VALUES ('Dann', 'Rios', '12345678', 'jon@mail.com', '123123');
+-- Update field url_photo
